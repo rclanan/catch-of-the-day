@@ -1,17 +1,3 @@
-// These are your firebase security rules - put then in the "Security & Rules" tab of your
-{
-    "rules": {
-        // won't let people delete an existing room
-        ".write": "!data.exists()",
-        ".read": true,
-        "$room" : {
-          // only the store owner can edit the data
-          ".write" : "newData.child('owner').val() === auth.uid",
-          ".read" : true
-        }
-    }
-}
-
 var source = require('vinyl-source-stream');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
